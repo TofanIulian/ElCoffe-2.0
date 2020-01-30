@@ -6,16 +6,23 @@
 
     <ul class="links-container">
         <li>
-            Log in
+            <button mat-button [matMenuTriggerFor]="loginMenu">Your Profile</button>
+            <mat-menu #loginMenu="matMenu" yPosition="below">
+                <button mat-menu-item (click)="openDialog('login')">Log In</button>
+                <button mat-menu-item (click)="openDialog('signup')">Sign Up</button>
+                <button mat-menu-item>Log Out</button>
+            </mat-menu>
         </li>
         <li>
-            Even more
+            <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
         </li>
         <li>
-            All stuff
-        </li>
-        <li>
-          <fa-icon icon="shopping-cart"></fa-icon>
+            <fa-icon icon="shopping-cart"></fa-icon>
         </li>
     </ul>
 </div>
+
